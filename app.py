@@ -22,11 +22,10 @@ def madlib_game(users_adjective, users_noun):
 
 @app.route('/multiply/<number1>/<number2>')
 def multiply(number1, number2):
-#if num1.isdigit() and num2.isdigit()
-#print return f'{number1} times {number2} is {int(number1) * int(number2)}'
-#else:
-  #return Invalid inputs. Please try again by entering 2 numbers!
-
+  if number1.isdigit() and number2.isdigit():
+    return f'{number1} times {number2} is {int(number1) * int(number2)}'
+  else:
+    return 'Invalid inputs. Please try again by entering 2 numbers!'
 
 @app.route('/sayntimes/<word>/<n>')
 def sayntimes(word, n):
