@@ -25,7 +25,6 @@ def multiply(number1, number2):
   result = int(number1)*int(number2)
   return f'{number1} times {number2} is {result}'
 
-
 @app.route('/multiply/<hello>/<world>')
 def invalid(hello, world):
   return f'Invalid inputs: {hello}, {world}. Please try again by entering 2 numbers!'
@@ -34,9 +33,10 @@ def invalid(hello, world):
 def invalid(hello, world):
 #if hello.str() and world.str()
   return f'Invalid inputs: {hello}, {world}. Please try again by entering 2 numbers!'
+
 @app.route('/sayntimes/<word>/<n>')
 def sayntimes(word, n):
-  if word.str() and n.isdigit():
+  if word.isalpha() and n.isdigit():
     return f'{word}' * int(n)
   else: "Invalid input. Please try again by entering a word and a number!"
 
